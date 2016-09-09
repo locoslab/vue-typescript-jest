@@ -73,9 +73,6 @@ describe('counter-ts.vue', () => {
 
 * Use jest as usual, e.g., `npm test -- --watch`
 
-### Limitations
-* No support for TypeScript code within the `*.vue` file, instead use the following snippet
-
 ### Notes
 * To use `import` with `*.vue` files in TypeScript code, cf. <https://github.com/locoslab/vue-typescript-import-dts>
 * To use TypeScript classes as Vue.js components, cf.
