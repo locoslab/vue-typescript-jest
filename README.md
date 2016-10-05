@@ -89,5 +89,18 @@ module.exports = require('./counter-ts.ts').default
 * Code coverage of `*.vue` files fails as the generated code contains a `with` statement that trips the babylon parser: use `coveragePathIgnorePatterns` as shown above to ignore the `*.vue` files
 * This package does not declare any dependencies: install the preferred versions of TypeScript, Jest, Vue.js, and vueify. Cf. [`package.json`](package.json) for the versions used during development.
 
+## Contributing
+Contributions including bug reports, tests, and documentation are more than welcome. To get started with development:
+``` bash
+# once: install dependencies
+npm install
+
+# run unit tests in watch mode
+npm test -- --watch
+
+# lint & test
+npm run prepublish
+```
+
 ## License
 [MIT](http://opensource.org/licenses/MIT)

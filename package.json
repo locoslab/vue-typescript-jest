@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "test": "eslint preprocessor.js && jest",
-    "dist": "eslint preprocessor.js && jest --coverage"
+    "prepublish": "eslint preprocessor.js && jest --no-cache --coverage"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
