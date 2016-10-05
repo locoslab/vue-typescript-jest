@@ -37,19 +37,19 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^0.9.30",
+    "@types/jest": "^15.1.32",
     "babel-core": "^6.0.0",
     "babel-plugin-transform-runtime": "^6.0.0",
     "babel-preset-es2015": "^6.0.0",
     "babel-runtime": "^6.0.0",
-    "eslint": "^3.3.0",
+    "eslint": "^3.7.0",
     "eslint-config-locoslab": "github:locoslab/eslint-config-locoslab",
     "html2jade": "^0.8.4",
-    "jest": "^15.1.1",
+    "jest-cli": "^16.0.1",
     "pug": "^2.0.0-beta5",
-    "typescript": "^2.0.2",
-    "vue": "^2.0.0-rc.5",
-    "vue-template-compiler": "^2.0.0-rc.5",
+    "typescript": "^2.0.3",
+    "vue": "^2.0.1",
+    "vue-template-compiler": "^2.0.1",
     "vue-typescript-import-dts": "^1.0.1"
   },
   "babel": {

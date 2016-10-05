@@ -33,7 +33,7 @@ describe('counter-ts.vue', () => {
 		clickNthButton(vm.$el, 2)
 		Vue.nextTick( () => {
 			html2jade.convertHtml(vm.$el.innerHTML, {bodyless: true}, (err: any, jade: string) => {
-				(<any>expect(jade)).toMatchSnapshot()
+				expect(jade).toMatchSnapshot()
 				resolve()
 			})
 		})
