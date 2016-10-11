@@ -1,6 +1,6 @@
 {
   "name": "vue-typescript-jest",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Jest preprocessor.js for Vue.js components and TypeScript",
   "author": "Locoslab GmbH",
   "homepage": "https://github.com/locoslab/vue-typescript-jest",
