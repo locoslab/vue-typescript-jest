@@ -72,7 +72,7 @@ function vue(src, filePath) {
 	}
 	let html = ''
 	if (!parts.template.lang || parts.template.lang === 'html') {
-		html = src
+		html = parts.template.content
 	} else if (parts.template.lang === 'pug') {
 		html = require('pug').compile(parts.template.content)()
 	} else {

@@ -29,5 +29,6 @@ export default {
 	},
 	created: function () {
 		this.counter++
-	}
+	},
+	name: 'counter-ts'
 }

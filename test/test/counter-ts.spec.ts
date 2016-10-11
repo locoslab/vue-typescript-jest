@@ -20,7 +20,7 @@ describe('counter-ts.vue', () => {
 function clickNthButton(el: HTMLElement, n: number) {
 	(<HTMLButtonElement>el.querySelector('div button:nth-of-type(' + n + ')')).click()
 }
-const html2jade = require('html2jade')
+import html2jade = require('html2jade')
 
 describe('counter-ts.vue', () => {
 	it('should just work', () => new Promise(function(resolve, reject) {

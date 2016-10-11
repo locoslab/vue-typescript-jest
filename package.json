@@ -19,7 +19,7 @@
     "pug"
   ],
   "scripts": {
-    "test": "eslint preprocessor.js && jest",
+    "test": "jest",
     "prepublish": "eslint preprocessor.js && jest --no-cache --coverage"
   },
   "jest": {
@@ -46,7 +46,7 @@
     "eslint-config-locoslab": "github:locoslab/eslint-config-locoslab",
     "html2jade": "^0.8.4",
     "jest-cli": "^16.0.1",
-    "pug": "^2.0.0-beta5",
+    "pug": "^2.0.0-beta6",
     "typescript": "^2.0.3",
     "vue": "^2.0.1",
     "vue-template-compiler": "^2.0.1",
