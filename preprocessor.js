@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 
 var defaultBabelOptions = {
 	presets: ['es2015'],
@@ -6,8 +7,22 @@ var defaultBabelOptions = {
 }
 
 function ts(src, filePath) {
+	// Microsoft's ts.findConfigFilepath does not work under Windows (hard coded '/' as directory separator)
+	// https://github.com/Microsoft/TypeScript/pull/9625 probably fixes this but is open since July 11th
+	function findConfigFile(filePath) {
+		const testPath = path.join(filePath, 'tsconfig.json')
+		if (fs.existsSync(testPath)) {
+			return testPath
+		} else {
+			const parent = path.dirname(filePath)
+			return parent !== filePath ? findConfigFile(parent) : undefined
+		}
+	}
 	const ts = require('typescript')
-	const tsConfigPath = ts.findConfigFile(filePath, fs.existsSync)
+	const tsConfigPath = findConfigFile(filePath)
+	if (!tsConfigPath) {
+		throw 'tsconfig.json not found for ' + filePath
+	}
 	const tsOptions = require(tsConfigPath)
 	const options = {
 		compilerOptions: tsOptions.compilerOptions,

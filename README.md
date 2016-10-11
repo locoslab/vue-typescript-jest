@@ -26,6 +26,7 @@ Portions of this project are heavily based on parts of [vueify](https://github.c
   },
 ```
 
+* Make sure a suitable `tsconfig.json` is present to specify your required TypeScript compiler options
 * Write a test for a Vue.js component
 ```typescript
 /// <reference path='../node_modules/@types/jest/index.d.ts' />
@@ -74,10 +75,12 @@ describe('counter-ts.vue', () => {
 * Use jest as usual, e.g., `npm test -- --watch`
 
 ### Notes
+* This project looks for `tsconfig.json` starting in the directory of the source file and continuing up in the directory tree
+* Only the `compilerOptions` subtree of `tsconfig.json` is used
 * To use `import` with `*.vue` files in TypeScript code, cf. <https://github.com/locoslab/vue-typescript-import-dts>
 * To use TypeScript classes as Vue.js components, cf.
 <https://github.com/locoslab/vue-typescript-component>
-* TypeScript code inline in a `*.vue` file is not supported. We prefer separate files to make use of existing IDE/editor and tooling support for TypeScript files. Instead, import the TypeScript module as follows
+* Inline TypeScript code in a `*.vue` file is not supported. We prefer separate files to make use of existing IDE/editor and tooling support for TypeScript files. Instead, import the TypeScript module as follows
 ```html
 <template>
 ...
