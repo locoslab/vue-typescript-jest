@@ -3,20 +3,23 @@ const path = require('path')
 
 var defaultBabelOptions = {
 	presets: ['es2015'],
-	plugins: ['transform-runtime']
+	plugins: ['transform-runtime'],
 }
 
 function ts(src, filePath) {
 	// Microsoft's ts.findConfigFilepath does not work under Windows (hard coded '/' as directory separator)
 	// https://github.com/Microsoft/TypeScript/pull/9625 probably fixes this but is open since July 11th
 	function findConfigFile(filePath) {
-		const testPath = path.join(filePath, 'tsconfig.json')
-		if (fs.existsSync(testPath)) {
-			return testPath
-		} else {
-			const parent = path.dirname(filePath)
-			return parent !== filePath ? findConfigFile(parent) : undefined
-		}
+		let prev = null
+		do {
+			const testPath = path.join(filePath, 'tsconfig.json')
+			if (fs.existsSync(testPath)) {
+				return testPath
+			}
+			prev = filePath
+			filePath = path.dirname(filePath)
+		} while (prev !== filePath)
+		return undefined
 	}
 	const ts = require('typescript')
 	const tsConfigPath = findConfigFile(filePath)
@@ -28,7 +31,7 @@ function ts(src, filePath) {
 		compilerOptions: tsOptions.compilerOptions,
 		moduleName: '',
 		reportDiagnostics: true,
-		fileName: filePath
+		fileName: filePath,
 	}
 	const res = ts.transpileModule(src, options)
 	if (res.diagnostics.length > 0) {

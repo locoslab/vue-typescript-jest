@@ -51,7 +51,7 @@ describe('counter-ts.vue', () => {
 function clickNthButton(el: HTMLElement, n: number) {
 	(<HTMLButtonElement>el.querySelector('div button:nth-of-type(' + n + ')')).click()
 }
-const html2jade = require('html2jade')
+import html2jade = require('html2jade')
 
 describe('counter-ts.vue', () => {
 	it('should just work', () => new Promise(function(resolve, reject) {
@@ -78,6 +78,7 @@ describe('counter-ts.vue', () => {
 * This project looks for `tsconfig.json` starting in the directory of the source file and continuing up in the directory tree
 * Only the `compilerOptions` subtree of `tsconfig.json` is used
 * To use `import` with `*.vue` files in TypeScript code, cf. <https://github.com/locoslab/vue-typescript-import-dts>
+* To further simplify snapshot testing with Jest and html2jade, cf. <https://github.com/locoslab/vue-jest-utils>
 * To use TypeScript classes as Vue.js components, cf.
 <https://github.com/locoslab/vue-typescript-component>
 * Inline TypeScript code in a `*.vue` file is not supported. We prefer separate files to make use of existing IDE/editor and tooling support for TypeScript files. Instead, import the TypeScript module as follows
