@@ -11,7 +11,9 @@ Portions of this project are heavily based on parts of [vueify](https://github.c
     "test": "jest"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/vue-typescript-jest/preprocessor.js",
+    "transform": {
+      ".*\\.(ts|vue)$": "<rootDir>/node_modules/vue-typescript-jest/preprocessor.js"
+    },
     "moduleFileExtensions": [
       "ts",
       "js",
@@ -24,6 +26,11 @@ Portions of this project are heavily based on parts of [vueify](https://github.c
       "/.*\\.vue"
     ]
   },
+```
+
+* For Jest v16 (earlier versions not tested), use the following instead of `transform`
+```js
+    "scriptPreprocessor": "<rootDir>/node_modules/vue-typescript-jest/preprocessor.js",
 ```
 
 * Make sure a suitable `tsconfig.json` is present to specify your required TypeScript compiler options
