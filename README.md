@@ -5,6 +5,7 @@ Portions of this project are heavily based on parts of [vueify](https://github.c
 
 ## Usage
 * Install: `npm install --save-dev vue-typescript-jest`
+* This package does not declare any dependencies: install the preferred versions of TypeScript, Jest, Vue.js, and vueify. Cf. [`package.json`](package.json) for the versions used during development.
 * Add the following snippet to `package.json` (adapting testRegex to your project layout)
 ```js
   "scripts": {
@@ -23,7 +24,7 @@ Portions of this project are heavily based on parts of [vueify](https://github.c
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/test/.*\\.(ts|js)$",
-      "/.*\\.vue"
+      "/.*\\.vue$"
     ]
   },
 ```
@@ -98,7 +99,6 @@ module.exports = require('./counter-ts.ts').default
 </script>
 ```
 * Code coverage of `*.vue` files fails as the generated code contains a `with` statement that trips the babylon parser: use `coveragePathIgnorePatterns` as shown above to ignore the `*.vue` files
-* This package does not declare any dependencies: install the preferred versions of TypeScript, Jest, Vue.js, and vueify. Cf. [`package.json`](package.json) for the versions used during development.
 
 ## Contributing
 Contributions including bug reports, tests, and documentation are more than welcome. To get started with development:

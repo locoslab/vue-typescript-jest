@@ -63,7 +63,8 @@ function babel(src) {
 // this is heavily based on vueify (Copyright (c) 2014-2016 Evan You)
 function vue(src, filePath) {
 	function toFunction (code) {
-		return 'function(){' + code + '}'
+		const transpile = require('vue-template-es2015-compiler')
+		return transpile('function render () {' + code + '}')
 	}
 	const vueCompiler = require('vue-template-compiler')
 	const parts = vueCompiler.parseComponent(src, { pad: true })
