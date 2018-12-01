@@ -1,4 +1,7 @@
-# vue-typescript-jest [![Build Status](https://travis-ci.org/locoslab/vue-typescript-jest.svg?branch=master)](https://travis-ci.org/locoslab/vue-typescript-jest) [![npm version](https://badge.fury.io/js/vue-typescript-jest.svg)](https://badge.fury.io/js/vue-typescript-jest)
+# :snowflake: DEPRECATION NOTICE :snowflake:
+Official TypeScript and Jest support has been added to Vue.js 2.x, which has changed considerably since this repository has been created. We recommend to start new projects with [Vue CLI](https://cli.vuejs.org/).
+
+# vue-typescript-jest
 Jest `preprocessor.js` for Vue.js components (supporting html and pug) and TypeScript.
 
 Portions of this project are heavily based on parts of [vueify](https://github.com/vuejs/vueify) (Copyright (c) 2014-2016 Evan You).
